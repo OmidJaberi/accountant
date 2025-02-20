@@ -1,3 +1,4 @@
+#include <string>
 #include "asset.h"
 
 void Asset::exchange(Currency& new_currency)
@@ -18,5 +19,12 @@ Currency Asset::getCurrency()
 
 std::string Asset::show()
 {
-    return "";
+    int val = value;
+    int dec = value * 100 - val * 100;
+    std::string s = std::to_string(val);
+    if (dec > 0)
+    {
+        s = s + "." + (dec < 10 ? "0" : "") + std::to_string(dec);
+    }
+    return s;
 }

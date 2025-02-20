@@ -11,6 +11,10 @@ int main()
     Asset money(100, USD);
     money.exchange(Toman);
 
-    std::cout << money.getValue() << std::endl;
+    std::cout << money << std::endl;
+    
+    Asset money2(1.47, USD);
+    std::cout << money2 << std::endl;
+
     return 0;
 }

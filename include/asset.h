@@ -15,6 +15,12 @@ public:
     double getValue();
     Currency getCurrency();
     std::string show();
+
+    friend std::ostream& operator<<(std::ostream& os, Asset& obj)
+    {
+        os << obj.show();
+        return os;
+    }
 };
 
 #endif

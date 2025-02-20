@@ -12,6 +12,7 @@ public:
     Currency(std::string _name);
     Currency(std::string _name, Currency base, double exchange_rate);
     float getVal();
+    std::string getName();
 };
 
 #endif
