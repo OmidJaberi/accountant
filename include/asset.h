@@ -9,14 +9,19 @@ private:
     double value;
     Currency currency;
 public:
-    Asset(const Currency& _currency) : currency(_currency) {};
+    Asset(const Currency& _currency) : value(0), currency(_currency) {};
     Asset(double _value, const Currency& _currency) : value(_value), currency(_currency) {};
+    
     void exchange(Currency& new_currency);
+    std::string show() const;
+    void add(Asset x);
+    
     double getValue();
     Currency getCurrency();
-    std::string show();
 
-    friend std::ostream& operator<<(std::ostream& os, Asset& obj)
+    Asset operator + (Asset a);
+
+    friend std::ostream& operator<<(std::ostream& os, const Asset& obj)
     {
         os << obj.show();
         return os;

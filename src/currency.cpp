@@ -17,7 +17,7 @@ float Currency::getVal()
     return relative_val;
 }
 
-std::string Currency::getName()
+std::string Currency::getName() const
 {
     return name;
 }
