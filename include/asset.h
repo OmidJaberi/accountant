@@ -15,12 +15,15 @@ public:
     void exchange(Currency& new_currency);
     std::string show() const;
     void add(Asset x);
+    void negate();
     void multiply(double m);
     
     double getValue();
     Currency getCurrency();
 
     Asset operator + (Asset a);
+
+    Asset operator - (Asset a);
 
     Asset operator * (double m);
 

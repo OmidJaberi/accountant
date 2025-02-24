@@ -21,6 +21,11 @@ std::string Asset::show() const
     return s;
 }
 
+void Asset::negate()
+{
+    value = -value;
+}
+
 void Asset::add(Asset x)
 {
     x.exchange(currency);
@@ -45,6 +50,14 @@ Currency Asset::getCurrency()
 Asset Asset::operator + (Asset a)
 {
     Asset ans(value, currency);
+    ans.add(a);
+    return ans;
+}
+
+Asset Asset::operator - (Asset a)
+{
+    Asset ans(value, currency);
+    a.negate();
     ans.add(a);
     return ans;
 }

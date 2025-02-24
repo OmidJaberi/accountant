@@ -9,8 +9,9 @@ int main()
     Currency USD("USD", IRR, 900000);
 
     Asset a(2, USD);
-    Asset b(50000, Toman);
-    std::cout << (a + b) * 10 << std::endl;
+    Asset b(45000, Toman);
+    Asset c(900000, IRR);
+    std::cout << (a + b) * 10 - c * 10 << std::endl;
 
     return 0;
 }
