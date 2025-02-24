@@ -27,6 +27,11 @@ void Asset::add(Asset x)
     value += x.getValue();
 }
 
+void Asset::multiply(double m)
+{
+    value *= m;
+}
+
 double Asset::getValue()
 {
     return value;
@@ -43,3 +48,11 @@ Asset Asset::operator + (Asset a)
     ans.add(a);
     return ans;
 }
+
+Asset Asset::operator * (double m)
+{
+    Asset ans(value, currency);
+    ans.multiply(m);
+    return ans;
+}
+

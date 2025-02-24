@@ -10,7 +10,7 @@ int main()
 
     Asset a(2, USD);
     Asset b(50000, Toman);
-    std::cout << (a + b) << std::endl;
+    std::cout << (a + b) * 10 << std::endl;
 
     return 0;
 }

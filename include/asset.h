@@ -15,11 +15,14 @@ public:
     void exchange(Currency& new_currency);
     std::string show() const;
     void add(Asset x);
+    void multiply(double m);
     
     double getValue();
     Currency getCurrency();
 
     Asset operator + (Asset a);
+
+    Asset operator * (double m);
 
     friend std::ostream& operator<<(std::ostream& os, const Asset& obj)
     {
