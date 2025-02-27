@@ -30,37 +30,17 @@ public:
 
     Asset operator / (double d);
 
-    void operator = (double a)
-    {
-        value = a;
-    }
+    void operator = (double a);
 
-    void operator = (Asset a)
-    {
-        value = a.value;
-        currency = a.currency;
-    }
+    void operator = (Asset a);
 
-    void operator += (Asset a)
-    {
-        add(a);
-    }
+    void operator += (Asset a);
 
-    void operator -= (Asset a)
-    {
-        a.negate();
-        add(a);
-    }
+    void operator -= (Asset a);
 
-    void operator *= (double a)
-    {
-        multiply(a);
-    }
+    void operator *= (double a);
 
-    void operator /= (double a)
-    {
-        divide(a);
-    }
+    void operator /= (double a);
 
     friend std::ostream& operator<<(std::ostream& os, const Asset& obj)
     {

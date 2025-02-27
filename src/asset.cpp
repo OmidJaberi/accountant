@@ -81,3 +81,34 @@ Asset Asset::operator / (double d)
     return ans;
 }
 
+void Asset::operator = (double a)
+{
+    value = a;
+}
+
+void Asset::operator = (Asset a)
+{
+    value = a.value;
+    currency = a.currency;
+}
+
+void Asset::operator += (Asset a)
+{
+    add(a);
+}
+
+void Asset::operator -= (Asset a)
+{
+    a.negate();
+    add(a);
+}
+
+void Asset::operator *= (double a)
+{
+    multiply(a);
+}
+
+void Asset::operator /= (double a)
+{
+    divide(a);
+}
