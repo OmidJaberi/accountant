@@ -17,6 +17,9 @@ int main()
     d *= 100;
     d -= Asset(100, USD);
     d /= 3;
-    std::cout << d << std::endl;
+    Asset e = d;
+    std::cout << e << std::endl;
+    e = 10;
+    std::cout << e << std::endl;
     return 0;
 }

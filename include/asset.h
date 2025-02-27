@@ -30,6 +30,17 @@ public:
 
     Asset operator / (double d);
 
+    void operator = (double a)
+    {
+        value = a;
+    }
+
+    void operator = (Asset a)
+    {
+        value = a.value;
+        currency = a.currency;
+    }
+
     void operator += (Asset a)
     {
         add(a);
