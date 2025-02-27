@@ -14,9 +14,10 @@ public:
     
     void exchange(Currency& new_currency);
     std::string show() const;
-    void add(Asset x);
     void negate();
+    void add(Asset x);
     void multiply(double m);
+    void divide(double d);
     
     double getValue();
     Currency getCurrency();
@@ -26,6 +27,29 @@ public:
     Asset operator - (Asset a);
 
     Asset operator * (double m);
+
+    Asset operator / (double d);
+
+    void operator += (Asset a)
+    {
+        add(a);
+    }
+
+    void operator -= (Asset a)
+    {
+        a.negate();
+        add(a);
+    }
+
+    void operator *= (double a)
+    {
+        multiply(a);
+    }
+
+    void operator /= (double a)
+    {
+        divide(a);
+    }
 
     friend std::ostream& operator<<(std::ostream& os, const Asset& obj)
     {

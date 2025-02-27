@@ -37,6 +37,11 @@ void Asset::multiply(double m)
     value *= m;
 }
 
+void Asset::divide(double d)
+{
+    value /= d;
+}
+
 double Asset::getValue()
 {
     return value;
@@ -66,6 +71,13 @@ Asset Asset::operator * (double m)
 {
     Asset ans(value, currency);
     ans.multiply(m);
+    return ans;
+}
+
+Asset Asset::operator / (double d)
+{
+    Asset ans(value, currency);
+    ans.divide(d);
     return ans;
 }
 
