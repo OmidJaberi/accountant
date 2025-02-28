@@ -21,5 +21,20 @@ int main()
     std::cout << e << std::endl;
     e = 10;
     std::cout << e << std::endl;
+    
+    Asset x(10, USD);
+    Asset y(899500, Toman);
+    Asset z = y;
+
+    if (x == y)
+        std::cout << x << " = " << y << std::endl;
+    if (x < y)
+        std::cout << x << " < " << y << std::endl;
+    if (x <= y)
+        std::cout << x << " <= " << y << std::endl;
+    if (x > y)
+        std::cout << x << " > " << y << std::endl;
+    if (x >= y)
+        std::cout << x << " >= " << y << std::endl;
     return 0;
 }

@@ -42,6 +42,16 @@ public:
 
     void operator /= (double a);
 
+    bool operator == (Asset a);
+    
+    bool operator < (Asset a);
+    
+    bool operator <= (Asset a);
+    
+    bool operator > (Asset a);
+    
+    bool operator >= (Asset a);
+    
     friend std::ostream& operator<<(std::ostream& os, const Asset& obj)
     {
         os << obj.show();

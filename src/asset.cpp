@@ -112,3 +112,36 @@ void Asset::operator /= (double a)
 {
     divide(a);
 }
+
+bool Asset::operator == (Asset a)
+{
+    a.exchange(currency);
+    double diff = value - a.value;
+    diff *= (diff < 0 ? -1 : 1);
+    return diff < 0.01;
+}
+
+bool Asset::operator < (Asset a)
+{
+    a.exchange(currency);
+    double diff = a.value - value;
+    return diff >= 0.01;
+}
+
+bool Asset::operator <= (Asset a)
+{
+    return (*this == a || *this < a);
+}
+
+bool Asset::operator > (Asset a)
+{
+    a.exchange(currency);
+    double diff = value - a.value;
+    return diff >= 0.01;
+}
+
+bool Asset::operator >= (Asset a)
+{
+    return (*this == a || *this > a);
+}
+
