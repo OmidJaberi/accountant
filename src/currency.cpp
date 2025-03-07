@@ -21,3 +21,8 @@ std::string Currency::getName() const
 {
     return name;
 }
+
+void Currency::add_rate(std::string &c, double rate)
+{
+    exchange_rate[c] = rate;
+}
